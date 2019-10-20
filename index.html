@@ -9,6 +9,73 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Carlos Tojal | Full-stack Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title> Carlos Tojal | Full-stack Developer </title>
+        <!-- Style Sheet -->
+        <link rel="stylesheet" href="styles.css">
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
     </head>
+    <body>
+        <header>
+            <h1 class="title"> Carlos Tojal </h1>
+            <h2 class="subtitle"> Full-stack Developer </h2>
+        </header>
+        <section>
+            <div class="initial_text">
+                Hi, I'm Carlos.<br>
+                A full-stack developer from Portugal, capable of developing for a wide range of platforms.<br>
+                Whether you're a company or a community, if you think the next step is to be in the digital world, you came to the right place.<br>
+            </div>
+            <div class="offers">
+                These are my offers:
+                <ul>
+                    <li><a href="#informational-websites"> Informational Websites </a></li>
+                    <li><a href="#management-systems"> Management Systems </a></li>
+                </ul>
+            </div>
+        </section>
+        <article>
+            <div class="offer" id="informational-websites">
+                <h1> Informational Websites </h1>
+                <div class="introduction"> 
+                    Whether you're business or a community, it is of course extremely important to be online, so that people can learn more about your services and you can reach a much wider audience.<br>
+                    This is my goal in web development: to help businesses and communities grow and expand their horizons. 
+                </div>
+                <div class="prices">
+                    <p> Prices: </p>
+                    <ul>
+                        <li> Design and development: $200 - $400 </li>
+                        <li> Anual website maintance: $250 </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="offer" id="management-systems">
+                <h1> Management Systems </h1>
+                <div class="introduction">
+                    Nowadays, all or almost all companies need a management system.<br>
+                    As for business management, paper is not a modern thing. It takes more work to organize and is only physically accessible. And besides it is polluting the planet.<br>
+                    Why all this embarassment, if you can have a management system, which is more secure and private than paper files, and allows you to run your business anywhere in the world?<br>
+                    It is with this in mind that I develop management systems, as I think that I can help more companies to have their management more organized, secure, private, and easily accessible.
+                </div>
+                <div class="prices">
+                    <p> Prices: </p>
+                    <p> Ask for a budget </p>
+                </div>
+            </div>
+        </article>
+        <script>
+            function simulate() {
+                var n_pages = document.getElementById("n_pages").value;
+                var price;
+                if(n_pages == 0)
+                    price = 0;
+                else if(n_pages == 1)
+                    price = 50;
+                else
+                    price = 50 + (n_pages * 5);
+                document.getElementById("simulation_price").innerHTML = "Price: " + price + "$";
+            }
+        </script>
+    </body>
 </html>
