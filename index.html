@@ -24,13 +24,15 @@
         <section>
             <div class="initial_text">
                 Hi, I'm Carlos.<br>
-                A full-stack developer from Portugal, capable of developing for a wide range of platforms.<br>
+                A full-stack developer from Portugal, capable of developing products for a wide range of platforms.<br>
                 Whether you're a company or a community, if you think the next step is to be in the digital world, you came to the right place.<br>
             </div>
             <div class="offers">
                 These are my offers:
                 <ul>
                     <li><a href="#informational-websites"> Informational Websites </a></li>
+                    <li><a href="#advanced-websites"> Advanced Web Apps </a></li>
+                    <li><a href="#ecommerce-websites"> E-commerce Apps </a></li>
                     <li><a href="#management-systems"> Management Systems </a></li>
                 </ul>
             </div>
@@ -43,10 +45,36 @@
                     This is my goal in web development: to help businesses and communities grow and expand their horizons. 
                 </div>
                 <div class="prices">
-                    <p> Prices: </p>
+                    <p> Cost: </p>
                     <ul>
-                        <li> Design and development: $200 - $400 </li>
-                        <li> Anual website maintance: $250 </li>
+                        <li> Design and development: $150 - $500 </li>
+                        <li> Anual website maintance: $300 - $600 </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="offer" id="advanced-websites">
+                <h1> Advanced Web Apps </h1>
+                <div class="introduction"> 
+                    A website with advanced features and functionalities.
+                </div>
+                <div class="prices">
+                    <p> Cost: </p>
+                    <ul>
+                        <li> Design and development: $550 - $750 </li>
+                        <li> Anual app maintance: $600 - $850 </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="offer" id="ecommerce-websites">
+                <h1> E-commerce Apps </h1>
+                <div class="introduction"> 
+                    An online store. Ideal if you want to expand your business worldwide.
+                </div>
+                <div class="prices">
+                    <p> Cost: </p>
+                    <ul>
+                        <li> Design and development: $600 - $1000 </li>
+                        <li> Anual app maintance: $650 - $900 </li>
                     </ul>
                 </div>
             </div>
@@ -59,23 +87,13 @@
                     It is with this in mind that I develop management systems, as I think that I can help more companies to have their management more organized, secure, private, and easily accessible.
                 </div>
                 <div class="prices">
-                    <p> Prices: </p>
-                    <p> Ask for a budget </p>
+                    <p> Cost: </p>
+                    <ul>
+                        <li> Design and development: $700 - $1000 </li>
+                        <li> Anual website maintance: $750 - $1100 </li>
+                    </ul>
                 </div>
             </div>
         </article>
-        <script>
-            function simulate() {
-                var n_pages = document.getElementById("n_pages").value;
-                var price;
-                if(n_pages == 0)
-                    price = 0;
-                else if(n_pages == 1)
-                    price = 50;
-                else
-                    price = 50 + (n_pages * 5);
-                document.getElementById("simulation_price").innerHTML = "Price: " + price + "$";
-            }
-        </script>
     </body>
 </html>
