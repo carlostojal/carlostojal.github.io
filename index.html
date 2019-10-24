@@ -17,67 +17,45 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
     </head>
     <body>
-        <header>
+        <header id="navbar">
             <h1 class="title"> Carlos Tojal </h1>
-            <h2 class="subtitle"> Full-stack Developer </h2>
+            <nav>
+                <a href="#"> Home </a>
+                <a href="#websites"> Websites and Web Apps </a>
+                <a href="#apps"> Desktop and Mobile Apps </a>
+                <a href="#management-systems"> Management Systems </a>
+                <a href="#contact-me"> Contact me </a>
+                <a href="#"> PT </a>
+            </nav>
         </header>
-        <section>
+        <div class="start">
+            <img id="img1" src="img/programming1.jpg">
+            <img id="img2" src="img/programming2.jpg">
             <div class="initial_text">
-                Hi, I'm Carlos.<br>
-                A full-stack developer from Portugal, capable of developing products for a wide range of platforms.<br>
-                Whether you're a company or a community, if you think the next step is to be in the digital world, you came to the right place.<br>
+                <div class="hi">Hi, I'm Carlos.</div>
+                <div class="typewrite" data-period="2000" data-type='[ "A software developer.", "A web developer.", "An Android developer.", "A desktop developer.", "A web designer.", "A UI designer.", "A UX designer.", "A systems administrator.", "A C developer.", "A Java developer.", "A Python developer.", "A PHP developer.", "A JavaScript developer.", "A full-stack developer."]'>
+                    <span class="wrap"></span>
+                </div>
             </div>
-            <div class="offers">
-                These are my offers:
-                <ul>
-                    <li><a href="#informational-websites"> Informational Websites </a></li>
-                    <li><a href="#advanced-websites"> Advanced Web Apps </a></li>
-                    <li><a href="#ecommerce-websites"> E-commerce Apps </a></li>
-                    <li><a href="#management-systems"> Management Systems </a></li>
-                </ul>
-            </div>
-        </section>
+        </div>
         <article>
-            <div class="offer" id="informational-websites">
-                <h1> Informational Websites </h1>
+            <h1 class="subtitle"> What can I do? </h1>
+            <div class="offer" id="websites">
+                <h1> Websites and Web Apps </h1>
                 <div class="introduction"> 
                     Whether you're business or a community, it is of course extremely important to be online, so that people can learn more about your services and you can reach a much wider audience.<br>
-                    This is my goal in web development: to help businesses and communities grow and expand their horizons. 
+                    This is my goal in web development: to help businesses and communities grow and expand their horizons.<br>
+                    You can also ask me to create your own web app.
                 </div>
-                <div class="prices">
-                    <p> Cost: </p>
-                    <ul>
-                        <li> Design and development: $150 - $500 </li>
-                        <li> Anual website maintance: $300 - $600 </li>
-                    </ul>
-                </div>
-                <a class="example" href="informational-websites"> Examples </a>
+                <a class="example" href="websites"> Examples </a>
             </div>
-            <div class="offer" id="advanced-websites">
-                <h1> Advanced Web Apps </h1>
+            <div class="offer" id="apps">
+                <h1> Desktop and Mobile Apps </h1>
                 <div class="introduction"> 
-                    A website with advanced features and functionalities.
+                    Who knows you are the creator of the next big app?
+                    Ask me help to bring your ideas to life.
                 </div>
-                <div class="prices">
-                    <p> Cost: </p>
-                    <ul>
-                        <li> Design and development: $550 - $750 </li>
-                        <li> Anual app maintance: $600 - $850 </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="offer" id="ecommerce-websites">
-                <h1> E-commerce Apps </h1>
-                <div class="introduction"> 
-                    An online store. Ideal if you want to expand your business worldwide.
-                </div>
-                <div class="prices">
-                    <p> Cost: </p>
-                    <ul>
-                        <li> Design and development: $600 - $1000 </li>
-                        <li> Anual app maintance: $650 - $900 </li>
-                    </ul>
-                </div>
+                <a class="example" href="apps"> Examples </a>
             </div>
             <div class="offer" id="management-systems">
                 <h1> Management Systems </h1>
@@ -87,14 +65,79 @@
                     Why all this embarassment, if you can have a management system, which is more secure and private than paper files, and allows you to run your business anywhere in the world?<br>
                     It is with this in mind that I develop management systems, as I think that I can help more companies to have their management more organized, secure, private, and easily accessible.
                 </div>
-                <div class="prices">
-                    <p> Cost: </p>
-                    <ul>
-                        <li> Design and development: $700 - $1000 </li>
-                        <li> Anual website maintance: $750 - $1100 </li>
-                    </ul>
-                </div>
+                <a class="example" href="management-systems"> Examples </a>
             </div>
         </article>
     </body>
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+            }
+
+            setTimeout(function() {
+            that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-200px";
+        }
+        prevScrollpos = currentScrollPos;
+        } 
+    </script>
+    
 </html>
