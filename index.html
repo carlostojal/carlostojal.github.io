@@ -3,7 +3,6 @@
 <!-- 
     Copyright (c) Carlos Tojal (carlostojal) 2019
     carlostojal-dev
-    index.html
 -->
 
 <html>
@@ -15,59 +14,102 @@
         <link rel="stylesheet" href="styles.css">
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+		<!-- ReactJS -->
+		<script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+		<script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+		<script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
     </head>
     <body>
-        <header id="navbar">
-            <h1 class="title"> Carlos Tojal </h1>
-            <nav>
-                <a href="#"> Home </a>
-                <a href="#websites"> Websites and Web Apps </a>
-                <a href="#apps"> Desktop and Mobile Apps </a>
-                <a href="#management-systems"> Management Systems </a>
-                <a href="#contact-me"> Contact me </a>
-                <a href="#"> PT </a>
-            </nav>
-        </header>
-        <div class="start">
-            <img id="img1" src="img/programming1.jpg">
-            <img id="img2" src="img/programming2.jpg">
-            <div class="initial_text">
-                <div class="hi">Hi, I'm Carlos.</div>
-                <div class="typewrite" data-period="2000" data-type='[ "A software developer.", "A web developer.", "An Android developer.", "A desktop developer.", "A web designer.", "A UI designer.", "A UX designer.", "A systems administrator.", "A C developer.", "A Java developer.", "A Python developer.", "A PHP developer.", "A JavaScript developer.", "A full-stack developer."]'>
-                    <span class="wrap"></span>
-                </div>
-            </div>
-        </div>
-        <article>
-            <h1 class="subtitle"> What can I do? </h1>
-            <div class="offer" id="websites">
-                <h1> Websites and Web Apps </h1>
-                <div class="introduction"> 
-                    Whether you're business or a community, it is of course extremely important to be online, so that people can learn more about your services and you can reach a much wider audience.<br>
-                    This is my goal in web development: to help businesses and communities grow and expand their horizons.<br>
-                    You can also ask me to create your own web app.
-                </div>
-                <a class="example" href="websites"> Examples </a>
-            </div>
-            <div class="offer" id="apps">
-                <h1> Desktop and Mobile Apps </h1>
-                <div class="introduction"> 
-                    Who knows you are the creator of the next big app?
-                    Ask me help to bring your ideas to life.
-                </div>
-                <a class="example" href="apps"> Examples </a>
-            </div>
-            <div class="offer" id="management-systems">
-                <h1> Management Systems </h1>
-                <div class="introduction">
-                    Nowadays, all or almost all companies need a management system.<br>
-                    As for business management, paper is not a modern thing. It takes more work to organize and is only physically accessible. And besides it is polluting the planet.<br>
-                    Why all this embarassment, if you can have a management system, which is more secure and private than paper files, and allows you to run your business anywhere in the world?<br>
-                    It is with this in mind that I develop management systems, as I think that I can help more companies to have their management more organized, secure, private, and easily accessible.
-                </div>
-                <a class="example" href="management-systems"> Examples </a>
-            </div>
-        </article>
+		<div id="root"></div>
+
+		<script type="text/babel">
+			
+			const rootElement = document.getElementById("root");
+
+			class Navbar extends React.Component {
+				render() {
+					return(
+						<header id="navbar">
+							<h1 class="title"> Carlos Tojal </h1>
+							<nav>
+								<a href="#"> Home </a>
+								<a href="#about-me"> About me </a>
+								<a href="#portfolio"> Portfolio </a>
+								<a href="#contact-me"> Contact me </a>
+								<a href="pt"> PT </a>
+							</nav>
+						</header>
+					);
+				}
+			}
+
+			class Start extends React.Component {
+				render() {
+					return(
+						<div class="start">
+							<img id="img1" src="img/programming1.jpg"></img>
+							<img id="img2" src="img/programming2.jpg"></img>
+							<div class="initial_text">
+								<div class="hi">Hi, I'm Carlos.</div>
+								<div class="typewrite" data-period="2000" data-type='[ "A software developer.", "A web developer.", "An Android developer.", "A desktop developer.", "A web designer.", "A UI designer.", "A UX designer.", "A C developer.", "A Java developer.", "A Python developer.", "A PHP developer.", "A JavaScript developer.", "A full-stack developer."]'>
+									<span class="wrap"></span>
+								</div>
+							</div>
+						</div>
+					);
+				}
+			}
+
+			class AboutMe extends React.Component {
+				render() {
+					return(
+						<div class="about-me">
+							<h1 class="subtitle"> Who am I? </h1>
+							<div class="text">
+								I'm Carlos, a full-stack developer from Portugal. <br></br>
+								I learned mostly by myself. <br></br>
+								I started programming just some years ago but, I've already learned a lot.
+							</div>
+						</div>
+					);
+				}
+			}
+
+			class ContactMe extends React.Component {
+				render() {
+					return(
+						<div class="contact-me">
+							<h1 class="subtitle"> Contact me </h1>
+							<div class="text">
+								I'm open for questions.<br></br>
+								If you are interested in working with me, don't hesitate to contact.
+							</div>
+							<input type="email" placeholder="Your email"></input><br></br>
+							<textarea placeholder="Your message">
+							</textarea><br></br><br></br>
+							<button onclick="send()"> Send </button>
+						</div>
+					);
+				}
+			}
+
+
+			function App() {
+				return(
+					<div>
+						<Navbar />
+						<Start />
+						<AboutMe />
+						<ContactMe />
+					</div>
+				);
+			}
+
+			ReactDOM.render(
+				<App />,
+				rootElement
+			);
+		</script>
     </body>
     <script>
         var TxtType = function(el, toRotate, period) {
