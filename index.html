@@ -3,6 +3,7 @@
 <!-- 
     Copyright (c) Carlos Tojal (carlostojal) 2019
     carlostojal-dev
+    github.com/carlostojal
 -->
 
 <html>
@@ -15,9 +16,9 @@
         <!-- Font -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
 		<!-- ReactJS -->
-		<script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-		<script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
-		<script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+		<script type="application/javascript" src="react/react-production.js"></script>
+		<script type="application/javascript" src="react/react-dom-production.js"></script>
+		<script type="application/javascript" src="react/babel.js"></script>
     </head>
     <body>
 		<div id="root"></div>
@@ -46,7 +47,7 @@
 			class Start extends React.Component {
 				render() {
 					return(
-						<div class="start">
+						<div class="section" class="start">
 							<img id="img1" src="img/programming1.jpg"></img>
 							<img id="img2" src="img/programming2.jpg"></img>
 							<div class="initial_text">
@@ -63,7 +64,7 @@
 			class AboutMe extends React.Component {
 				render() {
 					return(
-						<div class="about-me">
+						<div class="about-me" class="section">
 							<h1 class="subtitle"> Who am I? </h1>
 							<div class="text">
 								I'm Carlos, a full-stack developer from Portugal. <br></br>
@@ -78,7 +79,7 @@
 			class ContactMe extends React.Component {
 				render() {
 					return(
-						<div class="contact-me">
+						<div class="contact-me" class="section">
 							<h1 class="subtitle"> Contact me </h1>
 							<div class="text">
 								I'm open for questions.<br></br>
@@ -95,6 +96,16 @@
 				}
 			}
 
+            class Footer extends React.Component {
+                render() {
+                    return(
+                        <footer>
+                            <p> Copyright Carlos Tojal 2019 </p>
+                        </footer>
+                    );
+                }
+            }
+
 
 			function App() {
 				return(
@@ -103,6 +114,7 @@
 						<Start />
 						<AboutMe />
 						<ContactMe />
+                        <Footer />
 					</div>
 				);
 			}
@@ -164,14 +176,12 @@
                 new TxtType(elements[i], JSON.parse(toRotate), period);
                 }
             }
-            // INJECT CSS
             var css = document.createElement("style");
             css.type = "text/css";
             css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
             document.body.appendChild(css);
         };
 
-        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
