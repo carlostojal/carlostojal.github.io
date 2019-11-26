@@ -1,3 +1,10 @@
+
+/*
+    Copyright (c) Carlos Tojal 2019
+    carlostojal-dev
+    github.com/carlostojal
+*/
+
 html {
     scroll-behavior: smooth;
 }
@@ -135,17 +142,27 @@ input {
 	font-family: 'Source Sans Pro';
 	font-size: 15px;
 	padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 	border-radius: 20px;
+    border: none;
 	width: 200px;
-	margin-bottom: 3px;
+	margin-bottom: 4px;
+    color: #9e9e9e;
+    background-color: #4d4d4d;  
 }
 
 textarea {
 	font-family: 'Source Sans Pro';
 	font-size: 15px;
 	padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 	border-radius: 20px;
+    border: none;
 	width: 200px;
+    color: #9e9e9e;
+    background-color: #4d4d4d;  
 }
 
 button {
