@@ -24,7 +24,12 @@
 		<div id="root"></div>
 
 		<script type="text/babel">
-			
+            
+            /*
+            var lang = navigator.language || navigator.userLanguage;
+		    if(lang == "pt-PT")
+                window.location.href = "pt"; */
+
 			const rootElement = document.getElementById("root");
 
 			class Navbar extends React.Component {
@@ -35,7 +40,6 @@
 							<nav>
 								<a href="#"> Home </a>
 								<a href="#about-me"> About me </a>
-								<a href="#portfolio"> Portfolio </a>
 								<a href="#contact-me"> Contact me </a>
 								<a href="pt"> PT </a>
 							</nav>

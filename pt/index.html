@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!-- 
+    Copyright (c) Carlos Tojal 2019
+    carlostojal-dev
+    github.com/carlostojal
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title> Carlos Tojal | Full-stack Developer </title>
+        <!-- Style Sheet -->
+        <link rel="stylesheet" href="../styles.css">
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+		<!-- ReactJS -->
+		<script type="application/javascript" src="../react/react-production.js"></script>
+		<script type="application/javascript" src="../react/react-dom-production.js"></script>
+		<script type="application/javascript" src="../react/babel.js"></script>
+    </head>
+    <body>
+        <header id="navbar">
+            <h1 class="title"> Carlos Tojal </h1>
+            <nav>
+                <a href="#"> Início </a>
+                <a href="#about-me"> Sobre mim </a>
+                <a href="#contact-me"> Contacte-me </a>
+                <a href=".."> EN </a>
+            </nav>
+        </header>
+        <div class="start">
+            <img id="img1" src="../img/programming1.jpg"></img>
+            <img id="img2" src="../img/programming2.jpg"></img>
+            <div class="initial_text">
+                <div class="hi">Olá, sou o Carlos.</div>
+                <div class="typewrite" data-period="2000" data-type='[ "Um desenvolvedor full-stack.", "Um desenvolvedor de software.", "Um desenvolvedor web.", "Um desenvolvedor Android.", "Um desenvolvedor desktop.", "Um designer web.", "Um designer de UI.", "Um designer de UX.", "Um desenvolvedor de C.", "Um desenvolvedor de Java.", "Um desenvolvedor de Python.", "Um desenvolvedor de PHP.", "Um desenvolvedor de JavaScript."]'>
+                    <span class="wrap"></span>
+                </div>
+            </div>
+        </div>
+        <div id="about-me" class="section">
+            <h1 class="subtitle"> Quem sou eu? </h1>
+            <div class="text">
+                Sou o Carlos, um desenvolvedor full-stack de Portugal. <br>
+                Aprendi maioritariamente sozinho. <br>
+                Comecei no mundo da programação há apenas alguns anos, mas já aprendi muito.
+            </div>
+        </div>
+        <div id="contact-me" class="section">
+            <h1 class="subtitle"> Contacte-me </h1>
+            <div class="text">
+                Estou aberto a questões. <br>
+                Se estiver interessado em trabalhar comigo, não hesite em contactar-me.
+            </div>
+            <div class="form">
+                <input type="email" placeholder="Email"></input><br>
+                <textarea placeholder="Mensagem"></textarea><br>
+                <button onclick="send()"> Enviar </button>
+            </div>
+        </div>
+        <footer>
+            Developed by Carlos Tojal 2019 <br><br>
+            <a href="https://github.com/carlostojal" target="_blank"><img src="../img/github.png"></a>
+            <a href="https://facebook.com/carlos.tojal" target="_blank"><img src="../img/facebook.png"></a>
+            <a href="https://instagram.com/carlostojal_dev" target="_blank"><img src="../img/instagram.png"></a>
+            <a href="https://twitter.com/CarlosTojal" target="_blank"><img src="../img/twitter.png"></a>
+            <a href="https://reddit.com/u/carlostojal" target="_blank"><img src="../img/reddit.png"></a><br><br>
+            All rights reserved.
+        </footer>
+    <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+            }
+
+            setTimeout(function() {
+            that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-200px";
+        }
+        prevScrollpos = currentScrollPos;
+        } 
+    </script>
+</html>
