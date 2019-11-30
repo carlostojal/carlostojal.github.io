@@ -192,13 +192,15 @@ footer {
 }
 
 footer a img {
-    max-width: 30px;
+    opacity: 0.5;
+    float: right;
+    max-width: 25px;
     margin-right: 15px;
     transition: all 0.7s;
 }
 
 footer a img:hover {
-    opacity: 0.6;
+    opacity: 1;
 }
 
 ::-webkit-scrollbar {
