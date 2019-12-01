@@ -6,22 +6,36 @@
     github.com/carlostojal
 -->
 
+<!--
+
+                               __                        __                                 __                __                      
+                              /  |                      /  |                               /  |              /  |                     
+  _______   ______    ______  $$ |  ______    _______  _$$ |_     ______      __   ______  $$ |          ____$$ |  ______   __     __ 
+ /       | /      \  /      \ $$ | /      \  /       |/ $$   |   /      \    /  | /      \ $$ | ______  /    $$ | /      \ /  \   /  |
+/$$$$$$$/  $$$$$$  |/$$$$$$  |$$ |/$$$$$$  |/$$$$$$$/ $$$$$$/   /$$$$$$  |   $$/  $$$$$$  |$$ |/      |/$$$$$$$ |/$$$$$$  |$$  \ /$$/ 
+$$ |       /    $$ |$$ |  $$/ $$ |$$ |  $$ |$$      \   $$ | __ $$ |  $$ |   /  | /    $$ |$$ |$$$$$$/ $$ |  $$ |$$    $$ | $$  /$$/  
+$$ \_____ /$$$$$$$ |$$ |      $$ |$$ \__$$ | $$$$$$  |  $$ |/  |$$ \__$$ |   $$ |/$$$$$$$ |$$ |        $$ \__$$ |$$$$$$$$/   $$ $$/   
+$$       |$$    $$ |$$ |      $$ |$$    $$/ /     $$/   $$  $$/ $$    $$/    $$ |$$    $$ |$$ |        $$    $$ |$$       |   $$$/    
+ $$$$$$$/  $$$$$$$/ $$/       $$/  $$$$$$/  $$$$$$$/     $$$$/   $$$$$$/__   $$ | $$$$$$$/ $$/          $$$$$$$/  $$$$$$$/     $/     
+                                                                       /  \__$$ |                                                     
+                                                                       $$    $$/                                                      
+                                                                        $$$$$$/                                                       
+
+-->
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#2b2b2b"/>
         <title> Carlos Tojal | Full-stack Developer </title>
-        <!-- Style Sheet -->
+        <!-- My Style Sheet -->
         <link rel="stylesheet" href="../styles.css">
-        <!-- Font -->
+        <!-- Font from Gooogle Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
-		<!-- ReactJS -->
-		<script type="application/javascript" src="../react/react-production.js"></script>
-		<script type="application/javascript" src="../react/react-dom-production.js"></script>
-		<script type="application/javascript" src="../react/babel.js"></script>
     </head>
     <body>
-        <header id="navbar">
+        <header id="navbar"> 
             <h1 class="title"> Carlos Tojal </h1>
             <nav>
                 <a href="#"> Início </a>
@@ -44,32 +58,59 @@
             <h1 class="subtitle"> Quem sou eu? </h1>
             <div class="text">
                 Sou o Carlos, um desenvolvedor full-stack de Portugal. <br>
-                Aprendi maioritariamente sozinho. <br>
-                Comecei no mundo da programação há apenas alguns anos, mas já aprendi muito.
+                Tenho 16 anos e estou atualmente no 2º ano do curso de Gestão e Programação de Sistemas Informáticos. <br>
+                O curso já me deu a oportunidade de obter alguns conhecimentos na área do desenvolvimento de software e websites, mas além disso gosto de aprender por mim mesmo, mantendo-me o mais atualizado que consigo no universo da tecnologia, que está em constante evolução.
             </div>
         </div>
-        <div id="contact-me" class="section">
+        <div id="contact-me">
             <h1 class="subtitle"> Contacte-me </h1>
             <div class="text">
                 Estou aberto a questões. <br>
                 Não hesite em contactar-me.
             </div>
             <div class="form">
-                <input type="email" placeholder="Email"></input><br>
-                <textarea placeholder="Mensagem"></textarea><br>
+                <input id="email" type="email" placeholder="Email"></input><br>
+                <input id="name" type="name" placeholder="Nome"></input><br>
+                <input id="subject" type="name" placeholder="Assunto"></input><br>
+                <textarea id="message" placeholder="Mensagem"></textarea><br>
                 <button onclick="send()"> Enviar </button>
             </div>
         </div>
         <footer>
-            Developed by Carlos Tojal 2019
-            <a href="https://reddit.com/u/carlostojal" target="_blank"><img src="../img/reddit.png"></a>
-            <a href="https://twitter.com/CarlosTojal" target="_blank"><img src="../img/twitter.png"></a>
-            <a href="https://instagram.com/carlostojal_dev" target="_blank"><img src="../img/instagram.png"></a>
-            <a href="https://facebook.com/carlos.tojal" target="_blank"><img src="../img/facebook.png"></a>
-            <a href="https://github.com/carlostojal" target="_blank"><img src="../img/github.png"></a><br>
-            All rights reserved.
+            Desenvolvido por Carlos Tojal 2019. Todos os direitos reservados.
+            <div class="social">
+                <a href="https://reddit.com/u/carlostojal" target="_blank"><img src="../img/reddit.png"></a>
+                <a href="https://twitter.com/CarlosTojal" target="_blank"><img src="../img/twitter.png"></a>
+                <a href="https://instagram.com/carlostojal_dev" target="_blank"><img src="../img/instagram.png"></a>
+                <a href="https://facebook.com/carlos.tojal" target="_blank"><img src="../img/facebook.png"></a>
+                <a href="https://github.com/carlostojal" target="_blank"><img src="../img/github.png"></a>
+            </div>
         </footer>
     <script>
+
+        var userLang = navigator.language || navigator.userLanguage; 
+
+        if(userLang != "pt-PT" && userLang != "pt-BR")
+            window.location.href = "..";
+
+        function send() {
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "../backend/send_mail/?email=" + email + "&name=" + name + "&subject=" + subject + "&message=" + message, false);
+            xhttp.send();
+
+            document.getElementById("email").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+
+            alert("Mensagem enviada com sucesso.")
+        }
+
         var TxtType = function(el, toRotate, period) {
             this.toRotate = toRotate;
             this.el = el;

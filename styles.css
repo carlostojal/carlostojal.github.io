@@ -7,6 +7,7 @@
 
 html {
     scroll-behavior: smooth;
+    cursor: default;
 }
 
 ::selection {
@@ -59,8 +60,12 @@ nav a {
     color: #cacaca;
     text-decoration: none;
     margin-left: 25px;
+    transition: all 0.5s;
 }
 
+nav a:hover {
+    color: #ffffff;
+}
 .start {
     height: 100vh;
 }
@@ -76,6 +81,7 @@ nav a {
     animation-name: img1_animation;
     animation-duration: 25s;
     animation-iteration-count: infinite;
+    overflow: hidden;
 }
 
 @keyframes img1_animation {
@@ -94,6 +100,7 @@ nav a {
     animation-name: img2_animation;
     animation-duration: 25s;
     animation-iteration-count: infinite;
+    overflow: hidden;
 }
 
 @keyframes img2_animation {
@@ -161,9 +168,11 @@ textarea {
 	border-radius: 20px;
     border: none;
 	width: 200px;
+    height: 100px;
     margin-bottom: 10px;
     color: #9e9e9e;
     background-color: #4d4d4d;  
+    resize: none;
 }
 
 button {
@@ -177,9 +186,30 @@ button {
 	background-color: #3b3b3b;
 	color: #bfbfbf;
 	transition: all 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
+	background-color: #5c5c5c;
+}
+
+.button {
+	font-family: 'Source Sans Pro';
+	font-size: 15px;
+	text-decoration: none;
+	margin: 15px;
+	padding: 15px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 20px;
+	border: none;
+	background-color: #3b3b3b;
+	color: #bfbfbf;
+	transition: all 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
 	background-color: #5c5c5c;
 }
 
@@ -203,8 +233,14 @@ footer a img:hover {
     opacity: 1;
 }
 
+.social {
+    float: right;
+    vertical-align: middle;
+}
+
 ::-webkit-scrollbar {
 	width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {

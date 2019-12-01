@@ -6,129 +6,111 @@
     github.com/carlostojal
 -->
 
+<!--
+
+                               __                        __                                 __                __                      
+                              /  |                      /  |                               /  |              /  |                     
+  _______   ______    ______  $$ |  ______    _______  _$$ |_     ______      __   ______  $$ |          ____$$ |  ______   __     __ 
+ /       | /      \  /      \ $$ | /      \  /       |/ $$   |   /      \    /  | /      \ $$ | ______  /    $$ | /      \ /  \   /  |
+/$$$$$$$/  $$$$$$  |/$$$$$$  |$$ |/$$$$$$  |/$$$$$$$/ $$$$$$/   /$$$$$$  |   $$/  $$$$$$  |$$ |/      |/$$$$$$$ |/$$$$$$  |$$  \ /$$/ 
+$$ |       /    $$ |$$ |  $$/ $$ |$$ |  $$ |$$      \   $$ | __ $$ |  $$ |   /  | /    $$ |$$ |$$$$$$/ $$ |  $$ |$$    $$ | $$  /$$/  
+$$ \_____ /$$$$$$$ |$$ |      $$ |$$ \__$$ | $$$$$$  |  $$ |/  |$$ \__$$ |   $$ |/$$$$$$$ |$$ |        $$ \__$$ |$$$$$$$$/   $$ $$/   
+$$       |$$    $$ |$$ |      $$ |$$    $$/ /     $$/   $$  $$/ $$    $$/    $$ |$$    $$ |$$ |        $$    $$ |$$       |   $$$/    
+ $$$$$$$/  $$$$$$$/ $$/       $$/  $$$$$$/  $$$$$$$/     $$$$/   $$$$$$/__   $$ | $$$$$$$/ $$/          $$$$$$$/  $$$$$$$/     $/     
+                                                                       /  \__$$ |                                                     
+                                                                       $$    $$/                                                      
+                                                                        $$$$$$/                                                       
+
+-->
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#2b2b2b"/>
         <title> Carlos Tojal | Full-stack Developer </title>
-        <!-- Style Sheet -->
-        <link rel="stylesheet" href="styles.css">
-        <!-- Font -->
+        <!-- My Style Sheet -->
+        <link rel="stylesheet" href="../styles.css">
+        <!-- Font from Gooogle Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
-		<!-- ReactJS -->
-		<script type="application/javascript" src="react/react-production.js"></script>
-		<script type="application/javascript" src="react/react-dom-production.js"></script>
-		<script type="application/javascript" src="react/babel.js"></script>
     </head>
     <body>
-		<div id="root"></div>
-
-		<script type="text/babel">
-            
-            /*
-            var lang = navigator.language || navigator.userLanguage;
-		    if(lang == "pt-PT")
-                window.location.href = "pt"; */
-
-			const rootElement = document.getElementById("root");
-
-			class Navbar extends React.Component {
-				render() {
-					return(
-						<header id="navbar">
-							<h1 class="title"> Carlos Tojal </h1>
-							<nav>
-								<a href="#"> Home </a>
-								<a href="#about-me"> About me </a>
-								<a href="#contact-me"> Contact me </a>
-								<a href="pt"> PT </a>
-							</nav>
-						</header>
-					);
-				}
-			}
-
-			class Start extends React.Component {
-				render() {
-					return(
-						<div class="section" class="start">
-							<img id="img1" src="img/programming1.jpg"></img>
-							<img id="img2" src="img/programming2.jpg"></img>
-							<div class="initial_text">
-								<div class="hi">Hi, I'm Carlos.</div>
-								<div class="typewrite" data-period="2000" data-type='[ "A full-stack developer.", "A software developer.", "A web developer.", "An Android developer.", "A desktop developer.", "A web designer.", "A UI designer.", "A UX designer.", "A C developer.", "A Java developer.", "A Python developer.", "A PHP developer.", "A JavaScript developer."]'>
-									<span class="wrap"></span>
-								</div>
-							</div>
-						</div>
-					);
-				}
-			}
-
-			class AboutMe extends React.Component {
-				render() {
-					return(
-						<div class="about-me" class="section">
-							<h1 class="subtitle"> Who am I? </h1>
-							<div class="text">
-								I'm Carlos, a full-stack developer from Portugal. <br></br>
-								I learned mostly by myself. <br></br>
-								I started programming just some years ago, but I've already learned a lot.
-							</div>
-						</div>
-					);
-				}
-			}
-
-			class ContactMe extends React.Component {
-				render() {
-					return(
-						<div class="contact-me" class="section">
-							<h1 class="subtitle"> Contact me </h1>
-							<div class="text">
-								I'm open for questions.<br></br>
-								If you are interested in working with me, don't hesitate to contact.
-							</div>
-							<div class="form">
-								<input type="email" placeholder="Your email"></input><br></br>
-								<textarea placeholder="Your message">
-								</textarea><br></br><br></br>
-								<button onclick="send()"> Send </button>
-							</div>
-						</div>
-					);
-				}
-			}
-
-            class Footer extends React.Component {
-                render() {
-                    return(
-                        <footer>
-                            <p> Copyright Carlos Tojal 2019 </p>
-                        </footer>
-                    );
-                }
-            }
-
-			function App() {
-				return(
-					<div>
-						<Navbar />
-						<Start />
-						<AboutMe />
-						<ContactMe />
-                        <Footer />
-					</div>
-				);
-			}
-
-			ReactDOM.render(
-				<App />,
-				rootElement
-			);
-		</script>
-    </body>
+        <header id="navbar"> 
+            <h1 class="title"> Carlos Tojal </h1>
+            <nav>
+                <a href="#"> Home </a>
+                <a href="#about-me"> About me </a>
+                <a href="#contact-me"> Contact me </a>
+                <a href="pt"> PT </a>
+            </nav>
+        </header>
+        <div class="start">
+            <img id="img1" src="../img/programming1.jpg"></img>
+            <img id="img2" src="../img/programming2.jpg"></img>
+            <div class="initial_text">
+                <div class="hi">Hi, I'm Carlos.</div>
+                <div class="typewrite" data-period="2000" data-type='[ "A full-stack developer.", "A software developer.", "A web developer.", "An Android developer.", "A desktop developer.", "A web designer.", "An UI designer.", "An UX designer.", "A C developer.", "A Java developer.", "A Python developer.", "A PHP developer.", "A JavaScript developer."]'>
+                    <span class="wrap"></span>
+                </div>
+            </div>
+        </div>
+        <div id="about-me" class="section">
+            <h1 class="subtitle"> Who am I? </h1>
+            <div class="text">
+                I'm Carlos, a full-stack developer from Portugal. <br>
+                I'm 16 and I'm in the second year of the Information Systems Administration and Programming. <br>
+                The course had give me the chance to learn some concepts about software and web development, but besides that I like to learn by myself, keeping me updated in the technology universe, which is constantly evolving.
+            </div>
+        </div>
+        <div id="contact-me">
+            <h1 class="subtitle"> Contact me </h1>
+            <div class="text">
+                I'm open for questions. <br>
+                Don't hesitate to contact me.
+            </div>
+            <div class="form">
+                <input id="email" type="email" placeholder="Email"></input><br>
+                <input id="name" type="name" placeholder="Name"></input><br>
+                <input id="subject" type="name" placeholder="Subject"></input><br>
+                <textarea id="message" placeholder="Message"></textarea><br>
+                <button onclick="send()"> Send </button>
+            </div>
+        </div>
+        <footer>
+            Developed by Carlos Tojal 2019. All rights reserved.
+            <div class="social">
+                <a href="https://reddit.com/u/carlostojal" target="_blank"><img src="../img/reddit.png"></a>
+                <a href="https://twitter.com/CarlosTojal" target="_blank"><img src="../img/twitter.png"></a>
+                <a href="https://instagram.com/carlostojal_dev" target="_blank"><img src="../img/instagram.png"></a>
+                <a href="https://facebook.com/carlos.tojal" target="_blank"><img src="../img/facebook.png"></a>
+                <a href="https://github.com/carlostojal" target="_blank"><img src="../img/github.png"></a>
+            </div>
+        </footer>
     <script>
+
+        var userLang = navigator.language || navigator.userLanguage; 
+
+        if(userLang == "pt-PT" || userLang == "pt-BR")
+            window.location.href = "pt";
+        
+        function send() {
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "../backend/send_mail/?email=" + email + "&name=" + name + "&subject=" + subject + "&message=" + message, false);
+            xhttp.send();
+
+            document.getElementById("email").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+
+            alert("Message sent successfully.")
+        }
+
         var TxtType = function(el, toRotate, period) {
             this.toRotate = toRotate;
             this.el = el;
@@ -196,5 +178,4 @@
         prevScrollpos = currentScrollPos;
         } 
     </script>
-    
 </html>
