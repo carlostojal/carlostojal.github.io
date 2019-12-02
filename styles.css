@@ -8,6 +8,7 @@
 html {
     scroll-behavior: smooth;
     cursor: default;
+    overflow-x: hidden;
 }
 
 ::selection {
@@ -81,7 +82,7 @@ nav a:hover {
     animation-name: img1_animation;
     animation-duration: 25s;
     animation-iteration-count: infinite;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 @keyframes img1_animation {
@@ -100,7 +101,7 @@ nav a:hover {
     animation-name: img2_animation;
     animation-duration: 25s;
     animation-iteration-count: infinite;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 @keyframes img2_animation {
