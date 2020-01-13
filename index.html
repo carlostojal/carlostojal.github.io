@@ -108,7 +108,7 @@ $$       |$$    $$ |$$ |      $$ |$$    $$/ /     $$/   $$  $$/ $$    $$/    $$ 
             var message = document.getElementById("message").value;
 
             var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "../backend/send_mail/?email=" + email + "&name=" + name + "&subject=" + subject + "&message=" + message, false);
+            xhttp.open("GET", "https://carlostojal-dev.000webhostapp.com/backend/send_mail/?email=" + email + "&name=" + name + "&subject=" + subject + "&message=" + message, false);
             xhttp.send();
 
             document.getElementById("email").value = "";
